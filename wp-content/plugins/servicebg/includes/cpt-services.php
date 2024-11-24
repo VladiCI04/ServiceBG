@@ -96,34 +96,63 @@ add_action( 'init', 'softuni_register_service_category_taxonomy' );
 
 /**
  * Register meta box(es).
+ * 
+ * @return void
  */
-function service_register_meta_boxes() {
-	add_meta_box( 'service', 
-	__( 'Service', 'softuni' ), 
-	'softuni_service_callback', 
-	'post' 
+function service_details_metabox() {
+	add_meta_box(
+	    'service_details_metabox_id',       	// Unique ID for the metabox
+	    'Service Details',                  	// Title of the metabox
+	    'service_details_metabox_callback', 	// Callback function that renders the metabox
+	    'service',        					// Post type where it will appear
+	    'side',                         		// Context: where on the screen (side, normal, or advanced)
+	    'default',                       		// Priority: default, high, low
+		array(
+			'__block_editor_compatible_meta_box' => true,
+			'__back_compat_meta_box'             => false,
+		)
 	);
-}
-add_action( 'add_meta_boxes', 'service_register_meta_boxes' );
-
-/**
- * Meta box display callback.
- *
- * @param WP_Post $post Current post object.
- */
-function softuni_service_callback( $post ) {
-	// Display code/markup goes here. Don't forget to include nonces!
-}
-
-/**
- * Save meta box content.
- *
- * @param int $post_id Post ID
- */
-function wpdocs_save_meta_box( $post_id ) {
-	// Save logic goes here. Don't forget to include nonce checks!
-}
-add_action( 'save_post', 'wpdocs_save_meta_box' );
+ }
+ add_action( 'add_meta_boxes', 'service_details_metabox' );
+ 
+ 
+ function service_details_metabox_callback( $post ) {
+	// Add a nonce field for security
+	wp_nonce_field( 'service_details_metabox_nonce_action', 'service_details_metabox_nonce' );
+ 
+	$service_address = get_post_meta( $post->ID, 'service_address', true );
+ 
+	echo '<label for="service_address">Address: </label>';
+	echo '<input type="text" id="service_address" name="service_address" value="' . esc_attr( $service_address ) . '" style="width: 100%;" />';
+ }
+ 
+ 
+ function service_save_metabox( $post_id ) {
+	// Check for nonce security
+	if ( ! isset( $_POST['service_details_metabox_nonce'] ) ||
+		! wp_verify_nonce( $_POST['service_details_metabox_nonce'], 'service_details_metabox_nonce_action' ) ) {
+	    return;
+	}
+ 
+	// Check for autosave or bulk edit
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+	    return;
+	}
+ 
+	// Check user permissions
+	if ( ! current_user_can( 'edit_post', $post_id ) ) {
+	    return;
+	}
+ 
+	 if ( isset( $_POST['_inline_edit'] ) ) {
+		 return;
+	}
+ 
+	if ( isset( $_POST['service_address'] ) ) {
+	    update_post_meta( $post_id, 'service_address', sanitize_text_field( $_POST['service_address'] ) );
+	}
+ }
+ add_action( 'save_post', 'service_save_metabox' );
 
 
 ?>
