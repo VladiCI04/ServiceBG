@@ -144,8 +144,8 @@ function service_details_metabox() {
 	    return;
 	}
  
-	 if ( isset( $_POST['_inline_edit'] ) ) {
-		 return;
+	if ( isset( $_POST['_inline_edit'] ) ) {
+		return;
 	}
  
 	if ( isset( $_POST['service_address'] ) ) {

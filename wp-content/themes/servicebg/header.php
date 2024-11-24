@@ -76,7 +76,7 @@
     <!-- Navbar Start -->
     <div class="container-fluid nav-bar bg-light">
         <nav class="navbar navbar-expand-lg navbar-light bg-white p-3 py-lg-0 px-lg-4">
-            <a href="<?php echo get_home_url( '/' );?>" class="navbar-brand d-flex align-items-center m-0 p-0 d-lg-none">
+            <a href="<?php echo get_home_url( '/' ); ?>" class="navbar-brand d-flex align-items-center m-0 p-0 d-lg-none">
                 <h1 class="text-primary m-0">ServiceBG</h1>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -84,7 +84,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav me-auto">
-                    <a href="<?php echo get_home_url( '/' );?>" class="nav-item nav-link active">Home</a>
+                    <a href="<?php echo get_home_url( '/' ); ?>" class="nav-item nav-link active">Home</a>
                     <a href="about.html" class="nav-item nav-link">About</a>
                     <a href="service.html" class="nav-item nav-link">Services</a>
                     <div class="nav-item dropdown">
@@ -118,7 +118,7 @@
     <div class="container-fluid p-0 mb-5">
         <div class="owl-carousel header-carousel position-relative">
             <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="<?php echo get_stylesheet_directory_uri();?>/img/carousel-1.jpg" alt="">
+                <img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/img/carousel-1.jpg" alt="">
                 <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(0, 0, 0, .4);">
                     <div class="container">
                         <div class="row justify-content-start">
@@ -133,7 +133,7 @@
                 </div>
             </div>
             <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="<?php echo get_stylesheet_directory_uri();?>/img/carousel-2.jpg" alt="">
+                <img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/img/carousel-2.jpg" alt="">
                 <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(0, 0, 0, .4);">
                     <div class="container">
                         <div class="row justify-content-start">
