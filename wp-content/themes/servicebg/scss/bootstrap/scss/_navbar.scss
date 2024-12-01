@@ -70,7 +70,7 @@
 
 // Navbar nav
 //
-// Custom navbar navigation (doesn't require `.nav`, but does make use of `.nav-link`).
+// Custom navbar navigation (doesn't require `.nav`, but does make use of `.menu-item`).
 
 .navbar-nav {
   display: flex;
@@ -79,9 +79,9 @@
   margin-bottom: 0;
   list-style: none;
 
-  .nav-link {
-    padding-right: 0;
-    padding-left: 0;
+  .menu-item {
+    padding-right: $nav-link-padding-x;
+    padding-left: $nav-link-padding-x;
   }
 
   .dropdown-menu {
@@ -175,7 +175,7 @@
             position: absolute;
           }
 
-          .nav-link {
+          .menu-item {
             padding-right: $navbar-nav-link-padding-x;
             padding-left: $navbar-nav-link-padding-x;
           }
@@ -216,7 +216,7 @@
   }
 
   .navbar-nav {
-    .nav-link {
+    .menu-item {
       color: $navbar-light-color;
 
       &:hover,
@@ -229,9 +229,9 @@
       }
     }
 
-    .show > .nav-link,
-    .nav-link.active {
-      color: $navbar-light-active-color;
+    .show > .menu-item,
+    .menu-item.current_page_item {
+      color: $navbar-light-current_page_item-color;
     }
   }
 
@@ -250,7 +250,7 @@
     a,
     a:hover,
     a:focus  {
-      color: $navbar-light-active-color;
+      color: $navbar-light-current_page_item-color;
     }
   }
 }
@@ -267,7 +267,7 @@
   }
 
   .navbar-nav {
-    .nav-link {
+    .menu-item {
       color: $navbar-dark-color;
 
       &:hover,
@@ -280,9 +280,9 @@
       }
     }
 
-    .show > .nav-link,
-    .nav-link.active {
-      color: $navbar-dark-active-color;
+    .show > .menu-item,
+    .menu-item.current_page_item {
+      color: $navbar-dark-current_page_item-color;
     }
   }
 
@@ -300,7 +300,7 @@
     a,
     a:hover,
     a:focus {
-      color: $navbar-dark-active-color;
+      color: $navbar-dark-current_page_item-color;
     }
   }
 }

@@ -5,14 +5,14 @@
     <div class="container-xxl py-5">
         <h1 class="mb-4"><?php echo get_the_archive_title() ?></h1>
         <div>
-            <?php 
+            <?php
                 echo get_the_author_meta( 'description' );
             ?>
         </div>
         <div class="container">
             <div class="row g-4">
                 <?php if(have_posts()) : ?>
-                    <?php while(have_posts()) : the_post(); ?>    
+                    <?php while(have_posts()) : the_post(); ?>
                         <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                             <div class="overflow-hidden">
                                 <?php the_post_thumbnail('post-thumbnail', ['class' => 'img-fluid w-100 h-100', 'title' => 'Feature image']); ?>

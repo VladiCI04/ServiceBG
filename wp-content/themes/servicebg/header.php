@@ -34,7 +34,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body>
+<body <?php body_class() ?>>
     <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
@@ -83,21 +83,17 @@
                 <span class="fa fa-bars"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav me-auto">
-                    <a href="<?php echo get_home_url( '/' ); ?>" class="nav-item nav-link active">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
-                    <a href="service.html" class="nav-item nav-link">Services</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                        <div class="dropdown-menu fade-up m-0">
-                            <a href="booking.html" class="dropdown-item">Booking</a>
-                            <a href="team.html" class="dropdown-item">Technicians</a>
-                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                            <a href="404.html" class="dropdown-item">404 Page</a>
-                        </div>
-                    </div>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
-                </div>
+                <?php
+                    // WordPress Menu
+					$nav_menu_args = array(
+                        'menu'				=> 'primary-menu', // (int|string|WP_Term) Desired menu. Accepts a menu ID, slug, name, or object.
+						'menu_class'		=> 'navbar-nav me-auto', // (string) CSS class to use for the ul element which forms the menu. Default 'menu'.
+                        'container'			=> 'ul', // (string) Whether to wrap the ul, and what to wrap it with. Default 'div'.
+                        'container_class'	=> 'collapse navbar-collapse', // (string) Class that is applied to the container. Default 'menu-{menu slug}-container'.
+                        'theme_location'	=> 'primary', // (string) Theme location to be used. Must be registered with register_nav_menu() in order to be selectable by the user.
+                    );
+					wp_nav_menu( $nav_menu_args );
+                ?>
                 <div class="mt-4 mt-lg-0 me-lg-n4 py-3 px-4 bg-primary d-flex align-items-center">
                     <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 45px; height: 45px;">
                         <i class="fa fa-phone-alt text-primary"></i>
@@ -113,7 +109,7 @@
     <!-- Navbar End -->
 
 
-    <?php if(!is_singular()) : ?>
+    <?php if(is_front_page()) : ?>
     <!-- Carousel Start -->
     <div class="container-fluid p-0 mb-5">
         <div class="owl-carousel header-carousel position-relative">

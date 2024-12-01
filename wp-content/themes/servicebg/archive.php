@@ -27,6 +27,7 @@
                 <?php endif; ?>
             </div>
         </div>
+        
         <?php
             the_posts_pagination(array(
                 'mid_size'      => 2,

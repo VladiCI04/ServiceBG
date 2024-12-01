@@ -2,7 +2,6 @@
 
     <?php servicebg_desplay_latest_post(); ?>
 
-
     <!-- About Start -->
     <div class="container-xxl py-5">
         <div class="container">

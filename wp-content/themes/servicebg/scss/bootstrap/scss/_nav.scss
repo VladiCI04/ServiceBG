@@ -3,6 +3,11 @@
 // Kickstart any navigation component with a set of style resets. Works with
 // `<nav>`s, `<ul>`s or `<ol>`s.
 
+ul {
+  display: flex;
+  gap: 10px;
+}
+
 .nav {
   display: flex;
   flex-wrap: wrap;
@@ -11,7 +16,7 @@
   list-style: none;
 }
 
-.nav-link {
+.menu-item {
   display: block;
   padding: $nav-link-padding-y $nav-link-padding-x;
   @include font-size($nav-link-font-size);
@@ -41,7 +46,7 @@
 .nav-tabs {
   border-bottom: $nav-tabs-border-width solid $nav-tabs-border-color;
 
-  .nav-link {
+  .menu-item {
     margin-bottom: -$nav-tabs-border-width;
     background: none;
     border: $nav-tabs-border-width solid transparent;
@@ -50,7 +55,7 @@
     &:hover,
     &:focus {
       border-color: $nav-tabs-link-hover-border-color;
-      // Prevents active .nav-link tab overlapping focus outline of previous/next .nav-link
+      // Prevents current_page_item .menu-item tab overlapping focus outline of previous/next .menu-item
       isolation: isolate;
     }
 
@@ -61,11 +66,11 @@
     }
   }
 
-  .nav-link.active,
-  .nav-item.show .nav-link {
-    color: $nav-tabs-link-active-color;
-    background-color: $nav-tabs-link-active-bg;
-    border-color: $nav-tabs-link-active-border-color;
+  .menu-item.current_page_item,
+  .show .menu-item {
+    color: $nav-tabs-link-current_page_item-color;
+    background-color: $nav-tabs-link-current_page_item-bg;
+    border-color: $nav-tabs-link-current_page_item-border-color;
   }
 
   .dropdown-menu {
@@ -82,16 +87,16 @@
 //
 
 .nav-pills {
-  .nav-link {
+  .menu-item {
     background: none;
     border: 0;
     @include border-radius($nav-pills-border-radius);
   }
 
-  .nav-link.active,
-  .show > .nav-link {
-    color: $nav-pills-link-active-color;
-    @include gradient-bg($nav-pills-link-active-bg);
+  .menu-item.current_page_item,
+  .show > .menu-item {
+    color: $nav-pills-link-current_page_item-color;
+    @include gradient-bg($nav-pills-link-current_page_item-bg);
   }
 }
 
@@ -101,16 +106,14 @@
 //
 
 .nav-fill {
-  > .nav-link,
-  .nav-item {
+  > .menu-item {
     flex: 1 1 auto;
     text-align: center;
   }
 }
 
 .nav-justified {
-  > .nav-link,
-  .nav-item {
+  > .menu-item {
     flex-basis: 0;
     flex-grow: 1;
     text-align: center;
@@ -119,7 +122,7 @@
 
 .nav-fill,
 .nav-justified {
-  .nav-item .nav-link {
+  .menu-item {
     width: 100%; // Make sure button will grow
   }
 }
@@ -127,13 +130,13 @@
 
 // Tabbable tabs
 //
-// Hide tabbable panes to start, show them when `.active`
+// Hide tabbable panes to start, show them when `.current_page_item`
 
 .tab-content {
   > .tab-pane {
     display: none;
   }
-  > .active {
+  > .current_page_item {
     display: block;
   }
 }

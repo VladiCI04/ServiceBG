@@ -7,7 +7,7 @@
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <h1 class="mb-4"><?php echo get_the_title() ?></h1>
-                    <p class="mb-4"><?php echo the_content() ?></p>
+                    <h6 class="mb-4"><?php echo the_content() ?></h6>
                 </div>
                 <?php if(has_post_thumbnail()) : ?>
                     <div class="col-lg-6 pt-4" style="min-height: 500px;">
