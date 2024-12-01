@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 
-    <!-- Service Start -->
+    <!-- Archive Start -->
     <div class="container-xxl py-5">
         <h1 class="mb-4"><?php echo get_the_archive_title() ?></h1>    
         <div class="container">
@@ -27,7 +27,7 @@
                 <?php endif; ?>
             </div>
         </div>
-        
+
         <?php
             the_posts_pagination(array(
                 'mid_size'      => 2,
@@ -36,7 +36,7 @@
             ));
         ?>
     </div>
-    <!-- Service End -->
+    <!-- Archive End -->
 
 
 <?php get_footer(); ?>

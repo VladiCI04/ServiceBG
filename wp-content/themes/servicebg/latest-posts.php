@@ -14,7 +14,7 @@
  <div class="container-xxl py-5">
         <div class="container">
             <div class="row g-4">
-               <h1 class="wow fadeInUp">LATEST NEWS</h1>
+               <h2 class="wow fadeInUp">LATEST NEWS</h2>
                <?php while($latest_posts_query -> have_posts()) : $latest_posts_query -> the_post() ?>
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                          <div class="overflow-hidden">

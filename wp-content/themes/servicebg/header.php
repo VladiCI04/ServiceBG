@@ -99,8 +99,8 @@
                         <i class="fa fa-phone-alt text-primary"></i>
                     </div>
                     <div class="ms-3">
-                        <p class="mb-1 text-white">Our Service</p>
-                        <h5 class="m-0 text-secondary">(+359)88 888 8888</h5>
+                        <p class="mb-1 text-white">Contact: </p>
+                        <h6 class="m-0 text-secondary">0889552478</h6>
                     </div>
                 </div>
             </div>
