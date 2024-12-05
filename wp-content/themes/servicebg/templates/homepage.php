@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Homepage
+* Template Name: Homepage
 */
 ?>
 
@@ -9,7 +9,9 @@
 
 
     <!-- Latest Posts Start -->
-    <?php servicebg_display_latest_post(); ?>
+    <?php 
+        servicebg_display_latest_post(3); 
+    ?>
     <!-- Latest Posts End -->
 
 

@@ -16,6 +16,8 @@ if (!defined( 'SOFTUNI_PLUGIN_ASSETS_PATH' )) {
 }
 
 require 'includes/cpt-services.php';
-require 'includes/cpt-testimonial.php'
+require 'includes/cpt-testimonial.php';
+require 'includes/functions.php';
+require 'includes/options-page.php';
 
 ?>
