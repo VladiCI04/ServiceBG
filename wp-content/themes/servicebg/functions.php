@@ -21,20 +21,16 @@ function servicebg_display_latest_post($number_of_posts = 3) {
      include 'latest-posts.php';
 }
 
+function servicebg_display_slider() {
+     include 'partials/slider.php';
+}
+
 /**
 * Register navigation menus
 *
 * @return void
 */
 function softuni_register_nav_menus() {
-	// register_nav_menus(
-	// 	array(
-	// 		'primary_menu'          => __( 'Primary Menu', 'textdomain' ),
-	// 		'primary_menu_mobile'   => __( 'Primary Menu Mobile', 'textdomain' ),
-	// 		'footer_menu_site_info' => __( 'Footer Menu Site Info', 'textdomain' ),
-	// 	)
-	// );
-
     register_nav_menu( 'primary', 'Primary Menu' );
 }
 

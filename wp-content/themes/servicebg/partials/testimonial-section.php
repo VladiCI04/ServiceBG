@@ -1,3 +1,14 @@
+<?php
+    $testimonial_args = array (
+        'post_type'         => 'testimonials',
+        'post_status'       => 'publish',
+        'posts_per_page'    => 3
+    );
+
+    $testimonial_query = get_posts( $testimonial_args );
+?>
+
+
 <!-- Testimonial Start -->
     <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
@@ -6,66 +17,33 @@
                 <h1 class="mb-5">Our Clients Say!</h1>
             </div>
             <div class="owl-carousel testimonial-carousel position-relative wow fadeInUp" data-wow-delay="0.1s">
-                <div class="testimonial-item text-center">
-                    <div class="testimonial-text bg-light text-center p-4 mb-4">
-                        <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                <?php foreach($testimonial_query as $testimonial) : ?>
+                    <?php
+                        $id = $testimonial->ID;
+                        
+                        $testimonial_author = get_field( 'author', $id );
+                        $testimonial_stars = get_field( 'stars', $id );
+                        $testimonial_profession = get_field( 'profession', $id );
+                    ?>
+                    <div class="testimonial-item text-center">
+                        <div class="testimonial-text bg-light text-center p-4 mb-4">
+                            <p class="mb-0" style="color: aliceblue"><?php echo $testimonial->post_content ?></p>
+                        </div>
+                        <div class="mb-2">
+                        <?php 
+                            for($i = 1; $i <= $testimonial_stars; $i++) {
+                                ?>
+                                    <small class="fa fa-star text-secondary"></small>
+                                <?php
+                            } 
+                        ?>
                     </div>
-                    <img class="bg-light rounded-circle p-2 mx-auto mb-2" src="<?php echo get_stylesheet_directory_uri();?>/img/testimonial-1.jpg" style="width: 80px; height: 80px;">
-                    <div class="mb-2">
-                        <small class="fa fa-star text-secondary"></small>
-                        <small class="fa fa-star text-secondary"></small>
-                        <small class="fa fa-star text-secondary"></small>
-                        <small class="fa fa-star text-secondary"></small>
-                        <small class="fa fa-star text-secondary"></small>
+                    <?php if(!empty($testimonial_author)) : ?>
+                        <h5 class="mb-1"><?php echo esc_attr($testimonial_author) ?></h5>
+                    <?php endif; ?>
+                    <p class="m-0"><?php echo $testimonial_profession ?></p>
                     </div>
-                    <h5 class="mb-1">Client Name</h5>
-                    <p class="m-0">Profession</p>
-                </div>
-                <div class="testimonial-item text-center">
-                    <div class="testimonial-text bg-light text-center p-4 mb-4">
-                        <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-                    </div>
-                    <img class="bg-light rounded-circle p-2 mx-auto mb-2" src="<?php echo get_stylesheet_directory_uri();?>/img/testimonial-2.jpg" style="width: 80px; height: 80px;">
-                    <div class="mb-2">
-                        <small class="fa fa-star text-secondary"></small>
-                        <small class="fa fa-star text-secondary"></small>
-                        <small class="fa fa-star text-secondary"></small>
-                        <small class="fa fa-star text-secondary"></small>
-                        <small class="fa fa-star text-secondary"></small>
-                    </div>
-                    <h5 class="mb-1">Client Name</h5>
-                    <p class="m-0">Profession</p>
-                </div>
-                <div class="testimonial-item text-center">
-                    <div class="testimonial-text bg-light text-center p-4 mb-4">
-                        <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-                    </div>
-                    <img class="bg-light rounded-circle p-2 mx-auto mb-2" src="<?php echo get_stylesheet_directory_uri();?>/img/testimonial-3.jpg" style="width: 80px; height: 80px;">
-                    <div class="mb-2">
-                        <small class="fa fa-star text-secondary"></small>
-                        <small class="fa fa-star text-secondary"></small>
-                        <small class="fa fa-star text-secondary"></small>
-                        <small class="fa fa-star text-secondary"></small>
-                        <small class="fa fa-star text-secondary"></small>
-                    </div>
-                    <h5 class="mb-1">Client Name</h5>
-                    <p class="m-0">Profession</p>
-                </div>
-                <div class="testimonial-item text-center">
-                    <div class="testimonial-text bg-light text-center p-4 mb-4">
-                        <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-                    </div>
-                    <img class="bg-light rounded-circle p-2 mx-auto mb-2" src="<?php echo get_stylesheet_directory_uri();?>/img/testimonial-4.jpg" style="width: 80px; height: 80px;">
-                    <div class="mb-2">
-                        <small class="fa fa-star text-secondary"></small>
-                        <small class="fa fa-star text-secondary"></small>
-                        <small class="fa fa-star text-secondary"></small>
-                        <small class="fa fa-star text-secondary"></small>
-                        <small class="fa fa-star text-secondary"></small>
-                    </div>
-                    <h5 class="mb-1">Client Name</h5>
-                    <p class="m-0">Profession</p>
-                </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>

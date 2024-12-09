@@ -12,7 +12,7 @@ if ( ! class_exists( 'Servicebg_Testimonials' ) ) :
 		}
 	
 		/**
-		* Register a custom post type called "Testimonials".
+		* Register a custom post type called "testimonials".
 		*
 		* @see get_post_type_labels() for label keys.
 		*/
@@ -69,7 +69,7 @@ $servicebg_testimonials = new Servicebg_Testimonials();
 
 
 /**
-* Register a custom taxonomy category called "Testimonials category".
+* Register a custom taxonomy category called "testimonials category".
 *
 * @return void
 */
@@ -96,11 +96,11 @@ function servicebg_register_testimonials_category_taxonomy() {
 		'show_ui'           => true,
 		'show_admin_column' => true,
 		'query_var'         => true,
-		'show_in_rest'       => true,
+		'show_in_rest'      => true,
 		'rewrite'           => array( 'slug' => 'category' ),
 	);
 
-	register_taxonomy( 'testimonials-category', 'testimonials', $args );
+	register_taxonomy( 'testimonial-category', 'testimonials', $args );
 
 }
 

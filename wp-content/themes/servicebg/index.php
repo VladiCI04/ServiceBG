@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-    <?php servicebg_desplay_latest_post(); ?>
+    <?php servicebg_display_latest_post(); ?>
 
     <!-- About Start -->
     <div class="container-xxl py-5">
