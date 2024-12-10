@@ -80,4 +80,22 @@ function display_service_title( $attributes ) {
 add_shortcode( 'display_service_title', 'display_service_title' );
 
 
+/**
+ * A custom function that filter our custom category archive
+ *
+ * @return void
+ */
+function servicebg_theme_category_archive_query( $query ) {
+     $servicebg_options = get_option( 'servicebg_custom_options' );
+ 
+     if ( ! is_admin() && $query->is_main_query() && is_category() ) {
+          if ( ! empty( $servicebg_options['servicebg_category_posts_per_page'] ) ) {
+               $query->set( 'posts_per_page', esc_attr( $servicebg_options['servicebg_category_posts_per_page'] ) );
+          }
+     }
+}
+
+add_action( 'pre_get_posts', 'servicebg_theme_category_archive_query' );
+
+
 ?>

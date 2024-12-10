@@ -5,20 +5,12 @@
 ?>
 
 
-<?php
-    $id = get_the_ID();
-
-    $homepage_photo1 = get_field( 'photo_1', $id );
-    $homepage_photo2 = get_field( 'photo_2', $id );
-?>
-
-
 <?php get_header(); ?>
 
 
     <!-- Latest Posts Start -->
     <?php 
-        servicebg_display_latest_post(3); 
+        servicebg_display_latest_post(3);
     ?>
     <!-- Latest Posts End -->
 

@@ -32,10 +32,6 @@ if ( ! class_exists( 'Servicebg_Testimonials' ) ) :
 				'parent_item_colon'     => __( 'Parent Testimonials:', 'servicebg' ),
 				'not_found'             => __( 'No Testimonials found.', 'servicebg' ),
 				'not_found_in_trash'    => __( 'No Testimonials found in Trash.', 'servicebg' ),
-				'featured_image'        => _x( 'Testimonials Cover Image', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'servicebg' ),
-				'set_featured_image'    => _x( 'Set cover image', 'Overrides the “Set featured image” phrase for this post type. Added in 4.3', 'servicebg' ),
-				'remove_featured_image' => _x( 'Remove cover image', 'Overrides the “Remove featured image” phrase for this post type. Added in 4.3', 'servicebg' ),
-				'use_featured_image'    => _x( 'Use as cover image', 'Overrides the “Use as featured image” phrase for this post type. Added in 4.3', 'servicebg' ),
 				'archives'              => _x( 'Testimonials archives', 'The post type archive label used in nav menus. Default “Post Archives”. Added in 4.4', 'servicebg' ),
 				'insert_into_item'      => _x( 'Insert into Testimonials', 'Overrides the “Insert into post”/”Insert into page” phrase (used when inserting media into a post). Added in 4.4', 'servicebg' ),
 				'uploaded_to_this_item' => _x( 'Uploaded to this Testimonials', 'Overrides the “Uploaded to this post”/”Uploaded to this page” phrase (used when viewing media attached to a post). Added in 4.4', 'servicebg' ),
@@ -57,7 +53,7 @@ if ( ! class_exists( 'Servicebg_Testimonials' ) ) :
 				'hierarchical'       => false,
 				'menu_position'      => null,
 				'show_in_rest'       => true,
-				'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
+				'supports'           => array( 'title', 'editor', 'author' ),
 			);
 	
 			register_post_type( 'testimonials', $args );

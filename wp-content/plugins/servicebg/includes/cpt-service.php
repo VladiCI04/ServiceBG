@@ -57,7 +57,7 @@ if ( ! class_exists( 'Servicebg_Services' ) ) :
 				'hierarchical'       => false,
 				'menu_position'      => null,
 				'show_in_rest'       => true,
-				'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt' )
+				'supports'           => array( 'title', 'editor', 'author', 'thumbnail' )
 			);
 
 			register_post_type( 'service', $args );

@@ -13,7 +13,7 @@ add_post_type_support ( 'excerpt', array() );
 add_action( 'wp_enqueue__scripts', 'servicebg_enqueue_assets' );
 function servicebg_enqueue_assets() {
      wp_enqueue_style( 'servicebg-main-style', get_stylesheet_directory_uri() . '/css/style.css', SERVICEBG_THEME_VER );
-	wp_enqueue_script( 'plugins-js', get_stylesheet_directory_uri() . '/js/plugins.js', array( 'jquery' ), SERVICEBG_THEME_VER, array( 'in_footer' => true ) );
+	wp_enqueue_script( 'plugins-js', get_stylesheet_directory_uri() . '/js/main.js', array( 'jquery' ), SERVICEBG_THEME_VER, array( 'in_footer' => true ) );
 	wp_enqueue_script( 'script', get_stylesheet_directory_uri() . '/js/script.js', array( 'jquery' ), SERVICEBG_THEME_VER, array( 'in_footer' => true ) );
 }
 

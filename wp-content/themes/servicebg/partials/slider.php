@@ -2,7 +2,7 @@
      $slider_args = array (
           'post_type'         => 'slider',
           'post_status'       => 'publish',
-          'posts_per_page'    => 3
+          'posts_per_page'    => 10
      );
 
      $slider_query = get_posts( $slider_args );
@@ -13,7 +13,7 @@
      <!-- Carousel Start -->
      <div class="container-fluid p-0 mb-5">
           <div class="owl-carousel header-carousel position-relative">
-               <?php foreach($slider_query as $slider) : ?> 
+               <?php foreach($slider_query as $slider) : ?>
                     <?php
                          $slider_ID = $slider->ID;
 
@@ -22,6 +22,7 @@
                          $header2 = get_field('header2', $slider_ID);
                          $paragraph = get_field('paragraph', $slider_ID);
                          $button = get_field('button', $slider_ID);
+                         $href = get_field('href', $slider_ID);
                     ?>
                     <div class="owl-carousel-item position-relative">
                          <img class="img-fluid" src="<?php echo $photo; ?>" alt="banner">
@@ -32,7 +33,7 @@
                                              <h5 class="text-white text-uppercase mb-3 animated slideInDown"><?php echo $header1; ?></h5>
                                              <h1 class="display-3 text-red animated slideInDown mb-4" style="color:lawngreen"><?php echo $header2 ;?></h1>
                                              <p class="fs-5 fw-medium text-white mb-4 pb-2"><?php echo $paragraph; ?></p>
-                                             <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft"><?php echo $button ?></a>
+                                             <a href="<?php echo $href ?>" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight"><?php echo $button ?></a>
                                         </div>
                                    </div>
                               </div>

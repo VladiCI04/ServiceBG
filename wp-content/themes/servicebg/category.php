@@ -1,5 +1,8 @@
 <?php get_header(); ?>
 
+<?php
+// Use a custom query or use pre_get_posts
+?>
 
     <!-- Service Start -->
     <div class="container-xxl py-5">
@@ -31,8 +34,8 @@
         <?php
             the_posts_pagination(array(
                 'mid_size'      => 2,
-                'prev_text'     => __( 'Previous', 'textdomain' ),
-                'next_text'     => __( 'Next', 'textdomain' )
+                'prev_text'     => __( 'Previous', 'servicebg' ),
+                'next_text'     => __( 'Next', 'servicebg' )
             ));
         ?>
     </div>

@@ -2,7 +2,7 @@
      $service_args = array (
           'post_type'         => 'service',
           'post_status'       => 'publish',
-          'posts_per_page'    => 3
+          'posts_per_page'    => 10
      );
 
      $service_query = get_posts( $service_args );
