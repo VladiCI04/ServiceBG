@@ -8,7 +8,7 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <h1 class="mb-4"><?php echo get_the_title() ?></h1>
                     <div class="col-md-2">
-                        <a href="#" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft like" id="service-<?php echo get_the_ID(); ?>" data-id="<?php echo get_the_ID(); ?>">LIKE (<?php echo $service_item_like = get_post_meta( get_the_ID(), 'votes', true ) ?? 0;?>)</a>
+                        <a href="#" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft like" id="service-<?php echo get_the_ID(); ?>" data-id="<?php echo get_the_ID(); ?>">LIKE (<?php echo $service_item_like = get_post_meta( get_the_ID(), 'votes', true ) ?? 0; ?>)</a>
                     </div>
                     <br>
                     <h6 class="mb-4"><?php echo the_content() ?></h6>
