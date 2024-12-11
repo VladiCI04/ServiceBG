@@ -31,7 +31,7 @@
                                    <div class="row justify-content-start">
                                         <div class="col-10 col-lg-8">
                                              <h5 class="text-white text-uppercase mb-3 animated slideInDown"><?php echo $header1; ?></h5>
-                                             <h1 class="display-3 text-red animated slideInDown mb-4" style="color:lawngreen"><?php echo $header2 ;?></h1>
+                                             <h1 class="display-3 text-red animated slideInDown mb-4" style="color:aliceblue"><?php echo $header2 ;?></h1>
                                              <p class="fs-5 fw-medium text-white mb-4 pb-2"><?php echo $paragraph; ?></p>
                                              <a href="<?php echo $href ?>" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight"><?php echo $button ?></a>
                                         </div>

@@ -15,7 +15,7 @@
             <div class="copyright">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="#">ServiceBG</a>, All Right Reserved. <?php echo date('Y') ?>
+                        &copy; <a class="border-bottom" href="<?php echo get_home_url( '/' ); ?>">ServiceBG</a>, All Right Reserved. <?php echo date('Y') ?>
                     </div>
                 </div>
             </div>

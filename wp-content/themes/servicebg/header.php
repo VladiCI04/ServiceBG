@@ -9,7 +9,7 @@
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="<?php echo get_stylesheet_directory_uri(); ?>/img/favicon.ico" rel="icon">
+    <link href="<?php echo get_stylesheet_directory_uri(); ?>/img/headerphoto1.ico" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,14 +48,14 @@
     <div class="container-fluid bg-light d-none d-lg-block">
         <div class="row align-items-center top-bar">
             <div class="col-lg-3 col-md-12 text-center text-lg-start">
-                <a href="" class="navbar-brand m-0 p-0">
-                    <h1 class="text-primary m-0">ServiceBG</h1>
+                <a href="<?php echo get_home_url( '/' ); ?>" class="navbar-brand m-0 p-0">
+                    <img style="width: 80px" src="<?php echo get_stylesheet_directory_uri(); ?>/img/headerphoto1.png"></img>
                 </a>
             </div>
             <div class="col-lg-9 col-md-12 text-end">
                 <div class="h-100 d-inline-flex align-items-center me-4">
                     <i class="fa fa-map-marker-alt text-primary me-2"></i>
-                    <p class="m-0">123 Street, New York, USA</p>
+                    <p class="m-0" style="color:pur">123 Street, New York, USA</p>
                 </div>
                 <div class="h-100 d-inline-flex align-items-center me-4">
                     <i class="far fa-envelope-open text-primary me-2"></i>
@@ -100,7 +100,7 @@
                     </div>
                     <div class="ms-3">
                         <p class="mb-1 text-white">Contact: </p>
-                        <h6 class="m-0 text-secondary">0889552478</h6>
+                        <h5 class="m-0" style="color:black">0889552478</h5>
                     </div>
                 </div>
             </div>

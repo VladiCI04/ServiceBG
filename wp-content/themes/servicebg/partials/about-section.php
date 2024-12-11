@@ -28,7 +28,7 @@
                         </div>
                         <div class="ms-3">
                             <p class="fs-5 fw-medium mb-2 text-white">Contact Us</p>
-                            <h3 class="m-0 text-secondary"><?php echo $homepage_phone ?></h3>
+                            <h3 class="m-0" style="color:black"><?php echo $homepage_phone ?></h3>
                         </div>
                     </div>
                 </div>

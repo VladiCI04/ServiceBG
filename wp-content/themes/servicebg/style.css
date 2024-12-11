@@ -22,7 +22,7 @@ ul li::before {
     position: absolute;
     width: 0;
     height: 4px;
-    background-color: #249305;
+    background-color: #1E60AA;
     left: 50%;
     bottom: 25px;
     transition: 0.3s all ease-in-out;
